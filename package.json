@@ -1,0 +1,23 @@
+{
+  "name": "cheil",
+  "version": "1.0.0",
+  "description": "Prueba técnica para la empresa Cheil.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solisdonoso19/cheil-exam.git"
+  },
+  "keywords": [],
+  "author": "Carlos Ivan Solis Donoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solisdonoso19/cheil-exam/issues"
+  },
+  "homepage": "https://github.com/solisdonoso19/cheil-exam#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
