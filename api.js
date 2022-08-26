@@ -12,12 +12,19 @@ const port = 3000;
 app.use(express.json());
 
 //llamando a los endpoints
-app.get("/", endpoints.list);
-app.post("/", endpoints.create);
-app.get("/:id", endpoints.get);
-app.put("/:id", endpoints.update);
-app.patch("/:id", endpoints.update);
-app.delete("/:id", endpoints.destroy);
+app.get("/hotels", endpoints.list);
+app.post("/hotels", endpoints.create);
+app.get("/hotels/:id", endpoints.get);
+app.put("/hotels/:id", endpoints.update);
+app.patch("/hotels/:id", endpoints.update);
+app.delete("/hotels/:id", endpoints.destroy);
+
+app.use(express.static("client"));
+
+app.get("/", (req, res) => {
+  console.log(__dirname);
+  res.sendFile(`${__dirname}/index.html`);
+});
 
 app.get("*", (req, res) => {
   res.status(404).send("Esta Pagina no existe");
