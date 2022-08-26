@@ -45,4 +45,9 @@ const create = async () => {
   console.log(saveHotel);
 };
 
-create();
+//create();
+const searchAll = async () => {
+  const hotels = await Hotel.find();
+  console.log(hotels);
+};
+searchAll();
