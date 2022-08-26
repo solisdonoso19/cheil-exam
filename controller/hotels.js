@@ -1,3 +1,5 @@
+//endpoint de la api
+
 const Hotels = {
   get: (req, res) => {
     res.status(200).send("Este es un Hotel!");
