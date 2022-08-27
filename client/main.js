@@ -34,7 +34,6 @@ const loadInitialTemplate = () => {
     </form>
     
     <h1>Lista de hoteles</h1>
-    <button class="btn btn-danger " onclick="filtro()">Eliminar</button>
     <div>
       <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" id="hotel-list">
       </div>
@@ -85,26 +84,7 @@ const getHotels = async () => {
   const hotelList = document.getElementById("hotel-list");
   hotelList.innerHTML = hotels.map((hotel) => template(hotel)).join("");
   hotels.forEach((hotel) => {
-    const hotelNodeDelete = document.querySelector(
-      `[data-id-delete="${hotel._id}"]`
-    );
-    hotelNodeDelete.onclick = async (e) => {
-      await fetch(`/hotels/${hotel._id}`, {
-        method: "DELETE",
-      });
-      hotelNodeDelete.parentNode.remove();
-      alert(`Hotel ${hotel.name} eliminado con exito!`);
-    };
-  });
-};
-
-const deleteHotel = () => {
-  const hotelList = document.getElementById("hotel-list");
-  hotelList.innerHTML = hotels.map((hotel) => template(hotel)).join("");
-  hotels.forEach((hotel) => {
-    const hotelNodeDelete = document.querySelector(
-      `[data-id-delete="${hotel._id}"]`
-    );
+    const hotelNodeDelete = document.querySelector(`[data-id="${hotel._id}"]`);
     hotelNodeDelete.onclick = async (e) => {
       await fetch(`/hotels/${hotel._id}`, {
         method: "DELETE",
