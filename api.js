@@ -20,6 +20,7 @@ app.patch("/hotels/:id", endpoints.update);
 app.delete("/hotels/:id", endpoints.destroy);
 
 app.use(express.static("client"));
+app.use(express.static("assets"));
 
 app.get("/", (req, res) => {
   console.log(__dirname);

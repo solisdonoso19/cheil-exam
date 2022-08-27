@@ -1,15 +1,15 @@
 //endpoints de la api
-const Hotels = require("./Hotels");
+const Hotels = require("./hotels");
 
-const Hotels = {
+const Hotel = {
   get: async (req, res) => {
     const { id } = req.params;
     const hotel = await Hotels.findOne({ _id: id });
     res.status(200).send(hotel);
   },
   list: async (req, res) => {
-    const hotels = await Hotels.find();
-    res.status(200).send(hotels);
+    const hotel = await Hotels.find();
+    res.status(200).send(hotel);
   },
   create: async (req, res) => {
     const hotel = new Hotels(req.body);
@@ -35,4 +35,4 @@ const Hotels = {
   },
 };
 
-module.exports = Hotels;
+module.exports = Hotel;

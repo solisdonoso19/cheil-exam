@@ -26,31 +26,6 @@ const Hotel = mongoose.model("Hotel", {
 });
 module.exports = Hotel;
 
-const create = async () => {
-  const hotel = new Hotel({
-    name: "Miramar",
-    category: "5 Estrellas",
-    price: 50,
-    images: {
-      img1: "imagen 1",
-      img2: "imagen 2",
-      img3: "imagen 3",
-    },
-    reviews: {
-      points: 5,
-      comment: "Bonito hotel",
-    },
-  });
-
-  try {
-    const saveHotel = await hotel.save();
-    console.log(saveHotel);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-//create();
 const searchAll = async () => {
   try {
     const hotels = await Hotel.find();
